@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <h1>Our Mighty TODO App</h1>
     <TodoList/>
   </div>
 </template>
