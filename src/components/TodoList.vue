@@ -20,9 +20,9 @@
         v-bind:todo="item"
         v-bind:key="index"
         v-bind:index="index"
-        v-bind:deleteTodo="deleteTodo"
         v-bind:list="todoList"
-        v-bind:updateTodo="updateTodo"
+        @update="updateTodo( $event.index, $event.update )"
+        @delete="deleteTodo( $event.index )"
     />
 </div>
 </template>
@@ -43,6 +43,10 @@ export default {
     }),
 
     methods: {
+        debug(args){
+            console.log(args)
+        },
+
         addTodo() {
             if (this.text) {
                 this.todoList.push(this.text);
